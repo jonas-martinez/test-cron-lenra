@@ -10,9 +10,11 @@ module.exports = async (props, event, api) => {
 
     let counters = res.data;
     if (counters.length == 0) {
-        await apiService.createDoc(api, "counter", {
+        let res = await apiService.createDoc(api, "counter", {
             "count": 0,
             "user": "global"
         });
+
+        console.log(res);
     }
 }
